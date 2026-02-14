@@ -4,20 +4,16 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Задача 1");
         int clientOS = 1;
-        switch (clientOS) {
-            case 0:
-                System.out.println("Установите версию приложения " +
-                        "для iOS по ссылке" + "\n");
-                break;
-            case 1:
-                System.out.println("Установите версию приложения " +
-                    "для Android по ссылке" + "\n");
-                break;
-            default:
-                System.out.println("Выберите подходящую OS" + "\n");
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке"  + "\n");
+        }else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке"  + "\n");
+        }else{
+            System.out.println("Выберите нужную версию приложения" + "\n");
         }
+
         System.out.println("Задача 2");
-        int clientOS2 = 1;
+        int clientOS2 = 0;
         int clientDeviceYear = 2015;
         if (clientOS2 == 0 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения" +
@@ -25,8 +21,7 @@ public class Main {
         } else if (clientOS2 == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения" +
                     " для Android по ссылке" + "\n");
-        }
-        if (clientOS2 == 0 && clientDeviceYear >= 2015) {
+        }else if (clientOS2 == 0 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения" +
                     " для iOS по сслыке" + "\n");
         }else if (clientOS2 == 1 && clientDeviceYear >= 2015) {
@@ -35,25 +30,24 @@ public class Main {
         }
         System.out.println("Задача 3");
         int year =  2025;
-        if (year <= 1584) {
-            System.out.println(year + " год не является високосным" + "\n");
-        }boolean leapYear = (year % 4 == 0 && year % 100 !=0) || (year % 400 == 0);
-        if (leapYear) {
+        if (year > 1584 && ((year % 4 == 0 && year % 100 !=0) || year % 400 == 0)){
             System.out.println(year + " год является високосным" + "\n");
-        }else {
+        }else{
             System.out.println(year + " год не является високосным" + "\n");
         }
+
         System.out.println("Задача 4");
         int deliveryDistance = 95;
-        if (deliveryDistance <= 20) {
+        if (deliveryDistance > 0 && deliveryDistance <= 20) {
             System.out.println("Потребуется дней: 1" + "\n");
-        } else if (deliveryDistance <= 60) {
+        } else if (deliveryDistance > 0 && deliveryDistance <= 60) {
             System.out.println("Потребуется дней: 2" + "\n");
-        } else if (deliveryDistance <= 100) {
+        } else if (deliveryDistance > 0 && deliveryDistance <= 100) {
             System.out.println("Потребуется дней: 3" + "\n");
         } else {
             System.out.println("Доставки нет" + "\n");
         }
+
         System.out.println("Задача 5");
         int monthNumber = 12;
         if (monthNumber < 1 || monthNumber> 12) {
